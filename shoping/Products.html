@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Shop</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+
+    <nav class="navbar">
+    <h2 class="logo">FlexShop</h2>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+    </ul>
+
+    <div id="authArea">
+        <a href="login.html" id="loginLink">Login</a>
+        <span id="userDisplay"></span>
+        <button id="logoutBtn" style="display:none;">Logout</button>
+    </div>
+</nav>
+
+    <main>
+        <header class="hero">
+            <h1>Welcome to FlexShop</h1>
+            <p>Your one-stop online store</p>
+        </header>
+
+        <section class="products">
+            <div class="product-card" id="prod-1">
+                <img src="image/img4.jpeg" alt="Short Gown">
+                <h3>Short Gown</h3>
+                <p class="price">$29.99</p>
+                <button onclick="addToCart('prod-1', 'Short Gown', '29.99')">Add to Cart</button>
+            </div>
+
+            <div class="product-card" id="prod-2">
+                <img src="image/img1.jpeg" alt="Long Gown">
+                <h3>Long Gown</h3>
+                <p class="price">$39.99</p>
+                <button onclick="addToCart('prod-2', 'Long Gown', '39.99')">Add to Cart</button>
+            </div>
+
+            <div class="product-card" id="prod-3">
+                <img src="image/img2.jpeg" alt="Long Style">
+                <h3>Long Style</h3>
+                <p class="price">$19.99</p>
+                <button onclick="addToCart('prod-3', 'Long Style', '19.99')">Add to Cart</button>
+            </div>
+
+            <div class="product-card" id="prod-4">
+                <img src="image/img3.jpeg" alt="Black Gown">
+                <h3>Black Gown</h3>
+                <p class="price">$49.99</p>
+                <button onclick="addToCart('prod-4', 'Black Gown', '49.99')">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 FlexShop. All rights reserved.</p>
+    </footer>
+
+    <script>
+    const user = localStorage.getItem("loggedInUser");
+
+    const userDisplay = document.getElementById("userDisplay");
+    const loginLink = document.getElementById("loginLink");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (user) {
+        userDisplay.innerText = "Welcome, " + user;
+        loginLink.style.display = "none";
+        logoutBtn.style.display = "inline-block";
+    }
+
+    logoutBtn.addEventListener("click", function () {
+        localStorage.removeItem("loggedInUser");
+        location.reload();
+    });
+    </script>
+
+    <script src="cart.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - FlexShop</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+    <h2 class="logo">FlexShop</h2>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+    <div id="authArea">
+        <a href="login.html" id="loginLink">Login</a>
+        <span id="userDisplay"></span>
+        <button id="logoutBtn" style="display:none;">Logout</button>
+    </div>
+</nav>
+
+    <main>
+        <form id="registerForm">
+            <h2>Create Account</h2>
+            <input type="email" id="regEmail" placeholder="Enter Email" required>
+            <input type="password" id="regPassword" placeholder="Enter Password" required>
+            <button type="submit">Register</button>
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 FlexShop. All rights reserved.</p>
+    </footer>
+
+    <script src="auth.js"></script>
+
+    <script src="cart.js"></script>
+
+</body>
+</html>

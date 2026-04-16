@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Shop</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+
+   <nav class="navbar">
+    <h2 class="logo">FlexShop</h2>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+    <div id="authArea">
+        <a href="login.html" id="loginLink">Login</a>
+        <span id="userDisplay"></span>
+        <button id="logoutBtn" style="display:none;">Logout</button>
+    </div>
+</nav>
+
+    <main>
+        <header class="hero">
+            <h1>Welcome to FlexShop</h1>
+            <p>Your one-stop online store</p>
+        </header>
+        <section class="promo">
+            <p>🔥 50% Off Selected Items — Limited Time Only! 🔥</p>
+        </section>
+
+        <section class="about">
+            <h2>Why Shop With Us?</h2>
+            <p>
+                FlexShop brings you the best quality products at unbeatable prices. 
+                We focus on fast delivery, secure checkout, and a smooth shopping experience.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 FlexShop. All rights reserved.</p>
+    </footer>
+
+    <script>
+    const user = localStorage.getItem("loggedInUser");
+
+    const userDisplay = document.getElementById("userDisplay");
+    const loginLink = document.getElementById("loginLink");
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    if (user) {
+        userDisplay.innerText = "Welcome, " + user;
+        loginLink.style.display = "none";
+        logoutBtn.style.display = "inline-block";
+    }
+
+    logoutBtn.addEventListener("click", function () {
+        localStorage.removeItem("loggedInUser");
+        location.reload();
+    });
+</script>
+
+<script src="cart.js"></script>
+
+</body>
+</html>

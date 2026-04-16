@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - FlexShop</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+    <h2 class="logo">FlexShop</h2>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+    <div id="authArea">
+        <a href="login.html" id="loginLink">Login</a>
+        <span id="userDisplay"></span>
+        <button id="logoutBtn" style="display:none;">Logout</button>
+    </div>
+</nav>
+
+    <main>
+        <form id="loginForm">
+            <h2>Login</h2>
+            <input type="email" id="email" placeholder="Email" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="register.html">Register</a></p>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 FlexShop. All rights reserved.</p>
+    </footer>
+
+<script src="auth.js"></script>
+
+<script src="cart.js"></script>
+
+</body>
+</html>
